@@ -25,7 +25,7 @@ async def commands(message: Message) -> None:
 
 @dp.message(Command(commands='start'))
 async def command_start_handler(message: Message) -> None:
-    await message.answer(f"Привет, <b>{message.from_user.full_name}</b>! Я Бот, созданный @Aquobus и @dany2k")
+    await message.answer(f"Привет, <b>{message.from_user.full_name}</b>! Мы таджики мы носители корон")
 
 async def main() -> None:
     await dp.start_polling(bot)
