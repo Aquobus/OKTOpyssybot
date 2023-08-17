@@ -1,4 +1,9 @@
-from OKTOpyssybot import Command, Message, dp, bot
+import pandas as pd
+from main import dp, bot
+from aiogram.types import Message
+from aiogram.filters import Command
+
+dataframe = pd.read_excel('/home/aquobus/dev/OKTOpyssybot/DB/main.xlsx')
 
 @dp.message(Command(commands='start'))
 async def command_start_handler(message: Message) -> None:

@@ -1,2 +1,4 @@
-from . import help
-from . import start
+from .help import dp
+from .start import dp
+
+__all__ = ['help', 'start']

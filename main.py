@@ -1,15 +1,9 @@
-from OKTOpyssybot import *
-
-load_dotenv(find_dotenv())
-
-#@dp.message()
-#async def default(message: Message) -> None:
-    #await message.answer('Выбрано неверное действие')
-
-#@dp.message()
-#async def do(message: Message, answer_before: str, answer_after: str, func) -> None:
+import handlers
+from misc import *
 
 async def main() -> None:
+    
+
     print("starting the bot...")
     await dp.start_polling(bot)
 

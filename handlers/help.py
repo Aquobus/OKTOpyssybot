@@ -1,4 +1,4 @@
-from OKTOpyssybot import Command, Message, dp, bot
+from misc import Command, bot, dp, Message
 
 COMMANDS_DATA = {
     '/start': 'Начало работы с ботом',
