@@ -9,7 +9,7 @@ from botsTokens import USER_TOKEN, ADMIN_TOKEN
 
 load_dotenv(find_dotenv())
 
-TOKEN      = os.environ.get('USR_TOKEN')
+TOKEN      = os.environ.get('ADM_TOKEN')
 dp         = Dispatcher()
 bot        = Bot(TOKEN, parse_mode="HTML")
 
@@ -31,6 +31,7 @@ async def command_start_handler(message: Message) -> None:
     await message.answer(f"Привет, <b>{message.from_user.full_name}</b>! Я - бот, составляющий расписания для нашей группы! Для корректной работы системы и во избежания недопониманий предлагаю выбрать тебе, с кем бы ты хотел быть в паре на дежурстве.")
 
 async def main() -> None:
+    print("starting the bot...")
     await dp.start_polling(bot)
 
 if __name__ == "__main__":
