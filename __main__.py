@@ -1,12 +1,15 @@
 import os
 import asyncio
+from dotenv import *
 from aiogram import Bot, Dispatcher, Router, types
 from aiogram.filters import Command
 from aiogram.types import Message
 from command import COMMANDS_DATA
-from . import botsTokens as tokens
+from botsTokens import USER_TOKEN, ADMIN_TOKEN
 
-TOKEN      = tokens.USER_TOKEN
+load_dotenv(find_dotenv())
+
+TOKEN      = os.environ.get('USR_TOKEN')
 dp         = Dispatcher()
 bot        = Bot(TOKEN, parse_mode="HTML")
 
