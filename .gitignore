@@ -1,0 +1,3 @@
+# Ignove .env files
+*.env
+
