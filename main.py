@@ -1,8 +1,6 @@
-load_dotenv(find_dotenv())
+from OKTOpyssybot import *
 
-TOKEN      = os.environ.get('ADM_TOKEN')
-dp         = Dispatcher()
-bot        = Bot(TOKEN, parse_mode="HTML")
+load_dotenv(find_dotenv())
 
 #@dp.message()
 #async def default(message: Message) -> None:
@@ -11,15 +9,8 @@ bot        = Bot(TOKEN, parse_mode="HTML")
 #@dp.message()
 #async def do(message: Message, answer_before: str, answer_after: str, func) -> None:
 
-
-@dp.message(Command(commands='help'))
-async def commands(message: Message) -> None:
-    for command, description in COMMANDS_DATA.items():
-        await bot.send_message(message.from_user.id, f'{command}, {description}')
-
 @dp.message(Command(commands='start'))
 async def command_start_handler(message: Message) -> None:
-
     await message.answer(f"Привет, <b>{message.from_user.full_name}</b>! Я - бот, составляющий расписания для нашей группы! Для корректной работы системы и во избежания недопониманий предлагаю выбрать тебе, с кем бы ты хотел быть в паре на дежурстве.")
 
 async def main() -> None:
