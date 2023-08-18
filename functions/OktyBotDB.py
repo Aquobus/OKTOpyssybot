@@ -1,5 +1,13 @@
+import os
 import pandas as pd
 import openpyxl
+from dotenv import load_dotenv, find_dotenv
+
+load_dotenv(find_dotenv())
+
+MAIN_PATH = os.environ.get("MAIN_PATH")
+COUPLES_PATH = os.environ.get("COUPLES_PATH")
+BLACKLIST_PATH = os.environ.get("BLACKLIST_PATH")
 
 pupil_list = {
     'Баюнц':'0',
@@ -52,8 +60,7 @@ pupil_list_back = {
     '22':'Чулиев',
 }
 
-
-main_df = pd.read_excel('main.xlsx')
+main_df = pd.read_excel(MAIN_PATH)
 
 pupil_count_duty = main_df.loc[0:22,'count_duty']
 pupil_count_duty = list(pupil_count_duty)
