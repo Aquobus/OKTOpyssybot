@@ -13,7 +13,7 @@ class NotClassmateMessageMiddleware(BaseMiddleware):
             handler: Callable[[Message, Dict[str, Any]], Awaitable[Any]],
             event: Message,
             data: Dict[str, Any]) -> Any:
-        if is_in_group(userid=event.from_user.id + 1):
+        if is_in_group(userid=event.from_user.id):
             return await handler(event, data)
             print('Пользователь есть в базе данных!')
         

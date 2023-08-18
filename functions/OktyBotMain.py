@@ -127,17 +127,15 @@ def id_to_name(member_id: str) -> None: # функция просто возвр
             print(f'Нашёлся пидарас!): {name}')
             return name
 
-def add_to_blacklist(banned_id: int) -> None:
-    wb = load_workbook(BLACKLIST_PATH)
-    main_sheet = wb.active
-    main_sheet['B2'].value = banned_id
-    wb.save(BLACKLIST_PATH)
+# def add_to_blacklist(banned_id: int) -> None:
+#     wb = load_workbook(BLACKLIST_PATH)
+#     main_sheet = wb.active
+#     main_sheet['B2'].value = banned_id
+#     wb.save(BLACKLIST_PATH)
 
-    return 0
+#     return 0
 
 def is_in_group(userid: int) -> bool:
     dataframe = pd.read_excel(MAIN_PATH)
     id_col = list(dataframe.loc[0:22, 'telegramID'])
     return True if userid in id_col else False
-
-print(is_in_group(0))
