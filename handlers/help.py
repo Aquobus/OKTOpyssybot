@@ -1,4 +1,4 @@
-from misc import Command, bot, Message
+from misc import Command, Message
 from aiogram import Router
 
 COMMANDS_DATA = {
@@ -8,7 +8,7 @@ COMMANDS_DATA = {
 
 router = Router()
 
-@router.message(Command(commands='help'))
-async def commands(message: Message) -> None:
+@router.message(Command('help'))
+async def help(message: Message) -> None:
     for command, description in COMMANDS_DATA.items():
-        await bot.send_message(message.from_user.id, f'{command}, {description}')
+        await message.answer(message.from_user.id, f'{command}, {description}')

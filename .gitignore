@@ -1,3 +1,19 @@
-# Ignove .env files
-*.env
+# Environment files
+.env
 
+# Logging files
+*.log
+
+# Pycache folders
+__pycache__/main.cpython-310.pyc
+__pycache__/misc.cpython-310.pyc
+functions/__pycache__/OktyBotMain.cpython-310.pyc
+handlers/__pycache__/chat_id.cpython-310.pyc
+handlers/__pycache__/echo.cpython-310.pyc
+handlers/__pycache__/help.cpython-310.pyc
+handlers/__pycache__/start.cpython-310.pyc
+handlers/__pycache__/whatisithmmmm.cpython-310.pyc
+middlewares/__pycache__/notclassmate.cpython-310.pyc
+
+# Other folders
+/DB

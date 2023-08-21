@@ -1,4 +1,4 @@
-import os, sys
+import os
 import random
 import pandas as pd
 from functions.OktyBotDB import *
@@ -124,7 +124,6 @@ def id_to_name(member_id: str) -> None: # функция просто возвр
         # print(type(dataframe.at[i, 'telegramID'])) - ОТЛАДКА
         if str(dataframe.at[i, 'telegramID']) == member_id:
             name = dataframe.at[i, "name"]
-            print(f'Нашёлся пидарас!): {name}')
             return name
 
 # def add_to_blacklist(banned_id: int) -> None:
@@ -139,3 +138,8 @@ def is_in_group(userid: int) -> bool:
     dataframe = pd.read_excel(MAIN_PATH)
     id_col = list(dataframe.loc[0:22, 'telegramID'])
     return True if userid in id_col else False
+
+def return_pupils() -> str:
+    dataframe = pd.read_excel(MAIN_PATH)
+    database = dataframe.loc[0:23, 'surname':'name']
+    return database
