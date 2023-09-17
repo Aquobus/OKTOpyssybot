@@ -10,7 +10,7 @@ from functions.OktyBotMain import id_to_name
 router = Router()
 
 @router.message()
-async def echo_handler(message: Message) -> None:
+async def echo(message: Message) -> None:
     if '!' in str(message.text):
         return True
     if len(str(message.text)) < 3:
